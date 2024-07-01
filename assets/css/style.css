@@ -156,7 +156,7 @@
 
 #section1 .left-tree {
   position: absolute;
-  left: 0vw;
+  left: 3vw;
   bottom: 20px;
   width: 70vw;
   z-index: 2500;
@@ -189,7 +189,7 @@
 #section1 .sun-container {
   position: absolute;
   left: 48%;
-  bottom: 0;
+  bottom: -20px;
   transform: translate(-50%, 50%);
   z-index: 1200;
   width: 800px;
@@ -219,7 +219,7 @@
 
 #section1 .sun-face {
   position: absolute;
-  top: 45%;
+  top: 36%;
   left: 50%;
   width: 200px;
   height: 200px;
@@ -228,7 +228,7 @@
 
 #section1 .hat {
   position: absolute;
-  top: 9%;
+  top: 10%;
   left: 45%;
   width: 100px;
   height: auto;
