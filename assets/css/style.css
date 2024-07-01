@@ -99,9 +99,28 @@
   height: 40px;
 }
 
+#section2 .right-hand {
+  position: absolute;
+  right: 20%;
+  bottom: -10px;
+  width: 50px;
+  height: auto;
+  animation: wave-hand 2s infinite;
+}
+
+@keyframes wave-hand {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
 #section1 .left-back-tree {
   position: absolute;
-  left: -2vw;
+  left: -3vw;
   bottom: -5px;
   width: 70vw;
   z-index: 1500;
@@ -115,17 +134,37 @@
   z-index: 2000;
 }
 
-#section1 .left-tree {
+#section1 .left-hand {
   position: absolute;
   left: 5vw;
-  bottom: -5px;
+  bottom: 40px;
+  width: 50px;
+  height: auto;
+  z-index: 1999;
+  animation: wave-hand 2s infinite;
+}
+
+@keyframes wave-hand {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+#section1 .left-tree {
+  position: absolute;
+  left: 0vw;
+  bottom: 20px;
   width: 70vw;
   z-index: 2500;
 }
 
 #section1 .right-back-tree {
   position: absolute;
-  right: -43vw;
+  right: -47vw;
   bottom: 80px;
   width: 70vw;
   z-index: 1500;
@@ -141,8 +180,8 @@
 
 #section1 .right-front-tree {
   position: absolute;
-  right: -37vw;
-  bottom: 40px;
+  right: -40vw;
+  bottom: 30px;
   width: 70vw;
   z-index: 2500;
 }
@@ -194,7 +233,7 @@
   width: 100px;
   height: auto;
   transform: translate(-50%, -50%);
-  z-index: 1300; /* Ensure hat is above sun-face */
+  z-index: 1300;
   animation: bounce 2s infinite;
 }
 
@@ -205,6 +244,51 @@
   }
   50% {
     transform: translate(-50%, -50%) translateY(-10px);
+  }
+}
+
+#section1 .red-container {
+  position: absolute;
+  top: 10%;
+  left: 80%;
+  width: 50px;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 1300;
+}
+
+#section1 .red-body {
+  width: 30px;
+  height: auto;
+  animation: nodding 2s infinite;
+}
+
+@keyframes nodding {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+}
+
+#section1 .red-wing {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 60px;
+  height: auto;
+  animation: rotate-wing 0.5s linear infinite;
+}
+
+@keyframes rotate-wing {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(45deg);
   }
 }
 
