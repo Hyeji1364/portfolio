@@ -184,7 +184,7 @@
 
 #section1 .right-back-tree {
   position: absolute;
-  right: -47vw;
+  right: -45vw;
   bottom: 80px;
   width: 70vw;
   z-index: 1500;
@@ -200,7 +200,7 @@
 
 #section1 .right-front-tree {
   position: absolute;
-  right: -40vw;
+  right: -39vw;
   bottom: 30px;
   width: 70vw;
   z-index: 2500;
