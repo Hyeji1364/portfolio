@@ -15,6 +15,10 @@
   --font-name: Righteous;
 }
 
+body {
+  overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
 #section1 {
   width: 100vw;
   height: 100vh;
@@ -76,7 +80,20 @@
   height: 40px;
 }
 
-#section2 .right-icons {
+#section2 {
+  width: 100%;
+  height: 3934px;
+  background: url("../img/zigzag-bg.svg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  font-family: var(--font-name);
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#section1 .right-icons {
+  margin-right: 15px;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -84,22 +101,22 @@
   gap: 10px;
 }
 
-#section2 .join-icon {
+#section1 .join-icon {
   width: 150px;
   height: 40px;
 }
 
-#section2 .mail-icon {
+#section1 .mail-icon {
   width: 40px;
   height: 40px;
 }
 
-#section2 .menu-bar {
+#section1 .menu-bar {
   width: 40px;
   height: 40px;
 }
 
-#section2 .right-hand {
+#section1 .right-hand {
   position: absolute;
   right: 20%;
   bottom: -10px;
@@ -329,7 +346,55 @@
   }
 }
 
-#section2 {
-  height: 2000px;
-  background-color: #2f2f2f;
+.intro-text {
+  margin-top: 60px;
+  font-size: 1.2em;
+  line-height: 1.5;
+  text-align: center;
+  font-family: "Chosunilbo_myungjo";
+}
+
+.skill-icons {
+  margin-top: 100px;
+  text-align: center;
+}
+
+#section3 .nice {
+  margin-top: 175px;
+  text-align: center;
+}
+
+.section3-ment1 {
+  margin-top: 60px;
+  font-family: "Bebas Neue";
+  font-size: 130px;
+  text-align: center;
+  color: #fccf3d;
+}
+
+.section3-ment2 {
+  font-family: "Bebas Neue";
+  font-size: 120px;
+  text-align: center;
+  color: #fff;
+  margin-top: 165px;
+  line-height: 1;
+}
+
+.black-effect {
+  margin-top: 212px;
+  text-align: center;
+  position: relative;
+}
+
+.black-effect-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Bebas Neue";
+  font-size: 110px;
+  line-height: 1;
+  color: white;
+  text-align: center;
 }
