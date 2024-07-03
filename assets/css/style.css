@@ -379,12 +379,52 @@ body {
   color: #fff;
   margin-top: 165px;
   line-height: 1;
+  position: relative;
+}
+
+.section3-ment2 .arm {
+  position: absolute;
+  left: -50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 350px;
+  height: auto;
+  animation: wave-arm 1.5s infinite;
+}
+
+@keyframes wave-arm {
+  0%,
+  100% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-50%) rotate(20deg);
+  }
 }
 
 .black-effect {
   margin-top: 212px;
   text-align: center;
   position: relative;
+  animation: wave-effect 5s ease-in-out infinite;
+}
+
+@keyframes wave-effect {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg) translateX(-5px) translateY(-5px);
+  }
+  50% {
+    transform: rotate(-15deg) translateX(5px) translateY(5px);
+  }
+  75% {
+    transform: rotate(15deg) translateX(-5px) translateY(-5px);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .black-effect-text {
