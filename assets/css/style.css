@@ -349,14 +349,38 @@ body {
 .intro-text {
   margin-top: 60px;
   font-size: 1.2em;
-  line-height: 1.5;
+  line-height: 1;
   text-align: center;
   font-family: "Chosunilbo_myungjo";
+}
+
+.intro-text span {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .skill-icons {
   margin-top: 100px;
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.skill-icons img {
+  display: inline-block;
+  margin-right: 100px; /* 여기에 margin 추가 */
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 #section3 .nice {
