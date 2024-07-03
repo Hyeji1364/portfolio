@@ -11,6 +11,22 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Righteous&amp;display=swap" />
+    <style>
+      .wave-text {
+        display: inline-block;
+        animation: wave-animation 2s infinite;
+      }
+
+      @keyframes wave-animation {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="section1">
@@ -129,9 +145,9 @@
         <div class="black-effect">
           <img src="assets/img/black-effect.svg" alt="black-effect" />
           <div class="black-effect-text">
-            Publisher<br />
-            with creative<br />
-            ideas
+            <span class="wave-text">Publisher</span><br />
+            <span class="wave-text">with creative</span><br />
+            <span class="wave-text">ideas</span>
           </div>
         </div>
       </div>
