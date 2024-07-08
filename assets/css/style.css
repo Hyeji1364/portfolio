@@ -13,6 +13,8 @@
   --color-yellow: #debf40;
   --color-foreground: var(--color-white);
   --font-name: Righteous;
+  --speed: 40s; /* 속도를 느리게 조정 */
+  --gap: 0;
 }
 
 body {
@@ -70,26 +72,32 @@ body {
   gap: 10px;
 }
 
-#section1 .sound-icon {
-  width: 40px;
-  height: 40px;
+/* 새로운 버튼 스타일 추가 */
+.icon-button {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 24px; /* 아이콘 크기 조정 */
+  color: var(--color-white); /* 아이콘 색상 */
 }
 
-#section1 .music-icon {
-  width: 40px;
-  height: 40px;
+.sound-button {
+  background-color: #5a7d9a; /* 파란색 배경 */
 }
 
-#section2 {
-  width: 100%;
-  height: 3934px;
-  background: url("../img/zigzag-bg.svg") no-repeat center center;
-  background-size: cover;
-  color: white;
-  font-family: var(--font-name);
-  padding: 20px;
-  box-sizing: border-box;
-  position: relative;
+.music-button {
+  background-color: #a34b45; /* 빨간색 배경 */
+}
+
+.icon-button:hover {
+  transform: translateY(-2px);
 }
 
 #section1 .right-icons {
@@ -366,6 +374,7 @@ body {
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
+  margin-bottom: 80px;
 }
 
 .skill-icons img {
@@ -383,8 +392,75 @@ body {
   }
 }
 
+.zigzag-container {
+  display: flex;
+  width: 300%; /* 세 개의 zigzag를 나란히 놓기 위한 넓이 설정 */
+  height: 100px; /* 지그재그 높이 설정 */
+  position: relative; /* section2와 겹치게 설정 */
+  bottom: -1px;
+  animation: move-zigzag var(--speed) linear infinite;
+  background-color: #222; /* 흰색 선이 생기지 않도록 배경색 설정 */
+  overflow: hidden; /* 내용이 넘치지 않도록 설정 */
+  z-index: 2; /* section2와 자연스럽게 겹치도록 z-index 설정 */
+}
+
+.zigzag {
+  background-image: url("../img/zigzag.svg");
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: cover;
+  width: 33.3333%; /* 세 개의 zigzag를 나란히 놓기 위한 넓이 설정 */
+  height: 100px;
+}
+
+@keyframes move-zigzag {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.3333%); /* 세 개의 zigzag를 반복하기 위한 설정 */
+  }
+}
+
+#section2 {
+  width: 100%;
+  background: #222;
+  background-size: cover;
+  color: white;
+  font-family: var(--font-name);
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -100px; /* section2와 zigzag-container가 겹치게 설정 */
+}
+
+.myimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.myimg img {
+  margin-top: 100px;
+  border-radius: 50%; /* 원형으로 만들기 위해 반지름을 50%로 설정 */
+  width: 300px;
+  height: 300px;
+  height: auto; /* 높이를 자동으로 설정 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 그림자 효과 추가 */
+}
+
+#section3 {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: #a24436; /* 섹션 3 배경색 */
+}
+
 #section3 .nice {
-  margin-top: 175px;
+  margin-top: 100px;
   text-align: center;
 }
 
@@ -461,4 +537,72 @@ body {
   line-height: 1;
   color: white;
   text-align: center;
+}
+
+.ability-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 150px;
+  text-align: center;
+}
+
+.ability-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 자식 요소들을 아래쪽으로 정렬 */
+  align-items: center;
+  width: 25%;
+  height: 300px;
+  padding: 20px;
+  border: 5px solid #000;
+  border-radius: 30px;
+  background-color: #fff;
+  color: var(--color-foreground);
+  font-family: var(--font-name);
+  position: relative;
+  box-sizing: border-box; /* 패딩을 포함하여 높이와 너비 계산 */
+}
+
+.circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #fccf3d;
+  border: 4px solid #000;
+  color: #000;
+  font-size: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ability-title {
+  font-size: 2em;
+  margin-top: 2cap;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #000;
+}
+
+.ability-description {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #222;
+  font-family: "Chosunilbo_myungjo";
+  margin-top: 50px;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
