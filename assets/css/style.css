@@ -356,10 +356,10 @@ body {
 
 .intro-text {
   margin-top: 60px;
-  font-size: 1.2em;
+  font-size: 1.5em;
   line-height: 1;
   text-align: center;
-  font-family: "Chosunilbo_myungjo";
+  font-family: "Katuri";
 }
 
 .intro-text span {
@@ -539,61 +539,89 @@ body {
   text-align: center;
 }
 
+.ability-title-container {
+  text-align: center;
+  font-family: "Bebas Neue";
+  font-size: 10em;
+  color: #fccf3d;
+  margin-top: 150px;
+}
+
 .ability-container {
   display: flex;
-  justify-content: space-around;
-  margin-top: 150px;
+  justify-content: space-between; /* 박스 사이 간격 조정 */
+  margin-top: 50px;
   text-align: center;
+  padding: 5px 80px; /* 좌우 패딩 추가 */
 }
 
 .ability-box {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* 자식 요소들을 아래쪽으로 정렬 */
+  justify-content: flex-start; /* 자식 요소들을 위쪽으로 정렬 */
   align-items: center;
-  width: 25%;
-  height: 300px;
+  width: 30%;
+  height: 400px;
   padding: 20px;
   border: 5px solid #000;
   border-radius: 30px;
   background-color: #fff;
-  color: var(--color-foreground);
+  color: var(--color-black);
   font-family: var(--font-name);
   position: relative;
   box-sizing: border-box; /* 패딩을 포함하여 높이와 너비 계산 */
+  box-shadow: 0 8px;
+  margin-bottom: 100px;
 }
 
 .circle {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: #fccf3d;
   border: 4px solid #000;
   color: #000;
-  font-size: 3em;
+  font-size: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 25px;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-bottom: 10px; /* 원과 제목 간 거리 조정 */
 }
 
 .ability-title {
-  font-size: 2em;
-  margin-top: 2cap;
-  margin-bottom: 10px;
+  font-size: 2.5em;
+  margin-top: 20px;
+  margin-bottom: 5px;
   font-weight: bold;
   color: #000;
+  font-family: "Bebas Neue";
 }
 
 .ability-description {
-  font-size: 1em;
+  font-size: 18px;
   line-height: 1.5;
   color: #222;
-  font-family: "Chosunilbo_myungjo";
+  font-family: "Katuri";
+  margin-top: 20px;
+}
+
+.view-button {
+  background-color: #fccf3d;
+  border: none;
+  color: #000;
+  font-family: "Bebas Neue";
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
   margin-top: 50px;
+  margin-bottom: 50px;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* 버튼 그림자 추가 */
+}
+
+.view-button:hover {
+  background-color: #e0b935;
 }
 
 @keyframes fade-in {
@@ -605,4 +633,29 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.volume-slider-container {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  display: none;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.volume-slider {
+  width: 100px;
+}
+
+.alice-container {
+  position: absolute;
+  right: 10px;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: auto;
+  left: 1200px;
 }

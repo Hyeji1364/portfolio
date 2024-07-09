@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const music = document.getElementById("background-music");
+  const music1 = document.getElementById("background-music1");
+  const music2 = document.getElementById("background-music2");
   const musicButton = document.getElementById("music-button");
   const soundButton = document.getElementById("sound-button");
   const volumeSliderContainer = document.getElementById(
@@ -7,16 +8,22 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   const volumeSlider = document.getElementById("volume-slider");
 
-  // 음악 자동 재생
-  music.play();
+  // 페이지 로드 시 첫 번째 음악 자동 재생
+  music1.play();
+
+  // 첫 번째 음악이 끝나면 두 번째 음악 재생
+  music1.addEventListener("ended", function () {
+    music2.play();
+  });
 
   // 음악 재생/멈춤 버튼
   musicButton.addEventListener("click", function () {
-    if (music.paused) {
-      music.play();
+    if (music1.paused && music2.paused) {
+      music1.play();
       musicButton.textContent = "⏸️"; // 일시정지 아이콘
     } else {
-      music.pause();
+      music1.pause();
+      music2.pause();
       musicButton.textContent = "🎵"; // 재생 아이콘
     }
   });
@@ -35,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 볼륨 슬라이더
   volumeSlider.addEventListener("input", function () {
-    music.volume = volumeSlider.value;
+    music1.volume = volumeSlider.value;
+    music2.volume = volumeSlider.value;
   });
 });
 
