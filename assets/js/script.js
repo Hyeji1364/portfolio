@@ -7,6 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
     "volume-slider-container"
   );
   const volumeSlider = document.getElementById("volume-slider");
+  const portfolioReportText = document.querySelector(".portfolio-report p");
+  const introText = document.querySelector(".intro-text");
+  const lines = introText.querySelectorAll("span");
+  let delay = 0;
 
   // 페이지 로드 시 첫 번째 음악 자동 재생
   music1.play();
@@ -45,14 +49,24 @@ document.addEventListener("DOMContentLoaded", function () {
     music1.volume = volumeSlider.value;
     music2.volume = volumeSlider.value;
   });
-});
 
-document.addEventListener("DOMContentLoaded", () => {
-  const introText = document.querySelector(".intro-text");
-  const lines = introText.querySelectorAll("span");
-  let delay = 0;
+  // 포트폴리오 텍스트 스크롤 애니메이션
+  function handleScroll() {
+    const rect = portfolioReportText.getBoundingClientRect();
+    const windowHeight =
+      window.innerHeight || document.documentElement.clientHeight;
 
-  window.addEventListener("scroll", () => {
+    if (rect.top <= windowHeight) {
+      portfolioReportText.classList.add("scroll-animate");
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // 페이지 로드 시 초기 상태 확인
+
+  // 인트로 텍스트 애니메이션
+  function handleIntroScroll() {
     const section2Top = introText.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
@@ -63,6 +77,10 @@ document.addEventListener("DOMContentLoaded", () => {
           line.style.transform = "translateY(0)";
         }, delay + index * 300);
       });
+      window.removeEventListener("scroll", handleIntroScroll);
     }
-  });
+  }
+
+  window.addEventListener("scroll", handleIntroScroll);
+  handleIntroScroll(); // 페이지 로드 시 초기 상태 확인
 });
