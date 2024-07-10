@@ -397,7 +397,7 @@ body {
   width: 300%; /* 세 개의 zigzag를 나란히 놓기 위한 넓이 설정 */
   height: 100px; /* 지그재그 높이 설정 */
   position: relative; /* section2와 겹치게 설정 */
-  bottom: -1px;
+  bottom: -30px;
   animation: move-zigzag var(--speed) linear infinite;
   background-color: #222; /* 흰색 선이 생기지 않도록 배경색 설정 */
   overflow: hidden; /* 내용이 넘치지 않도록 설정 */
@@ -553,6 +553,7 @@ body {
   margin-top: 50px;
   text-align: center;
   padding: 5px 80px; /* 좌우 패딩 추가 */
+  margin-bottom: 100px;
 }
 
 .ability-box {
@@ -669,6 +670,7 @@ body {
   background-color: #a24436; /* 배경색 설정 */
   overflow: hidden; /* 내용이 넘치지 않도록 설정 */
   z-index: 2; /* section3와 자연스럽게 겹치도록 z-index 설정 */
+  bottom: -20px;
 }
 
 .blue-zigzag {
@@ -693,10 +695,10 @@ body {
 
 .portfolio-report {
   text-align: center;
-  margin-top: 0;
+  margin-top: 20;
   font-family: var(--font-name);
   background-color: #c8e8ff;
-  padding: 50px 0;
+  padding: 100px 0;
   position: relative;
   overflow: hidden; /* 애니메이션 효과가 밖으로 넘치지 않도록 설정 */
 }
@@ -711,16 +713,42 @@ body {
 .portfolio-report p {
   font-size: 1.5em;
   position: relative;
-  opacity: 0; /* 초기 상태에서 투명하게 설정 */
-  transform: translateY(30px); /* 초기 상태에서 아래로 이동 */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   font-family: "Katuri";
-
-  color: #000;
 }
 
-/* 스크롤할 때 애니메이션을 적용할 클래스 */
-.scroll-animate {
-  opacity: 1; /* 최종 상태에서 불투명하게 설정 */
-  transform: translateY(-30px); /* 최종 상태에서 위로 이동 */
+/* 포트폴리오 컨테이너 스타일 */
+.portfolio-container {
+  display: flex;
+  justify-content: flex-start; /* 아이템이 왼쪽에서 시작 */
+  overflow: hidden;
+  white-space: nowrap; /* 줄 바꿈을 방지하여 가로 스크롤을 가능하게 함 */
+  width: 150%; /* 컨테이너 너비를 두 배로 설정 */
+  margin-top: 50px;
+}
+
+.portfolio-box {
+  flex: 0 0 50%; /* 각 포트폴리오 박스의 너비 */
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.portfolio-image {
+  height: 100vh; /* 이미지 높이를 화면 높이에 맞춤 */
+  object-fit: cover; /* 이미지를 박스에 맞게 조정 */
+}
+
+/* 포트폴리오 애니메이션 */
+@keyframes scroll-portfolio {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* 두 번째 셋이 끝나는 위치 */
+  }
+}
+
+.portfolio-container {
+  animation: scroll-portfolio var(--speed) linear infinite;
 }
