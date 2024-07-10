@@ -659,3 +659,66 @@ body {
   height: auto;
   left: 1200px;
 }
+
+.blue-zigzag-container {
+  display: flex;
+  width: 300%; /* 세 개의 blue-zigzag를 나란히 놓기 위한 넓이 설정 */
+  height: 100px; /* 지그재그 높이 설정 */
+  position: relative; /* section3와 겹치게 설정 */
+  bottom: -1px;
+  animation: move-blue-zigzag var(--speed) linear infinite;
+  background-color: #a24436; /* 배경색 설정 */
+  overflow: hidden; /* 내용이 넘치지 않도록 설정 */
+  z-index: 2; /* section3와 자연스럽게 겹치도록 z-index 설정 */
+}
+
+.blue-zigzag {
+  background-image: url("../img/blue-zigzag.svg");
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: cover;
+  width: 33.3333%; /* 세 개의 zigzag를 나란히 놓기 위한 넓이 설정 */
+  height: 100px;
+}
+
+@keyframes move-blue-zigzag {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      -33.3333%
+    ); /* 세 개의 blue-zigzag를 반복하기 위한 설정 */
+  }
+}
+
+.zigzag-container {
+  display: flex;
+  width: 300%; /* 세 개의 zigzag를 나란히 놓기 위한 넓이 설정 */
+  height: 100px; /* 지그재그 높이 설정 */
+  position: relative; /* section2와 겹치게 설정 */
+  bottom: -1px;
+  animation: move-zigzag var(--speed) linear infinite;
+  background-color: #222; /* 흰색 선이 생기지 않도록 배경색 설정 */
+  overflow: hidden; /* 내용이 넘치지 않도록 설정 */
+  z-index: 2; /* section2와 자연스럽게 겹치도록 z-index 설정 */
+}
+
+.portfolio-report {
+  text-align: center;
+  margin-top: 0;
+  font-family: var(--font-name);
+  background-color: #c8e8ff; /* 배경 색상 추가 */
+  padding: 50px 0; /* 여백 추가 */
+}
+
+.portfolio-report h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue";
+}
+
+.portfolio-report p {
+  font-size: 1.2em;
+  font-family: "Katuri";
+}
